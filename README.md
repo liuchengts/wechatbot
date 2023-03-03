@@ -131,7 +131,7 @@ $ git clone https://github.com/liuchengts/wechatbot.git
 $ cd wechatbot
 
 # 编辑配置文件
-$ vi config.json
+$ cp config.dev.json config.json  # 按实际情况更改内容
 
 # 启动项目
 $ go run main.go
