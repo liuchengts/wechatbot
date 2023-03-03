@@ -2,7 +2,9 @@
 # 说明：
 ### 本项目来源于作者项目 [qingconglaixueit/wechatbot](https://github.com/qingconglaixueit/wechatbot) 本项目在其基础上增加了以下功能:
 * 增加在配置文件中配置访问代理地址，并在请求`OpenAI`时进行代理实现
-* 增加`gpt-3.5-turbo`模型接入实现
+* 增加`gpt-3.5-turbo` `gpt-3.5-turbo-0301` 模型接入实现
+
+目前支持`text-davinci-003` `gpt-3.5-turbo` `gpt-3.5-turbo-0301` 3种模型
 
 # 注意：
 ### 以下内容大部分为原项目说明，但根据情况，有部分的改动
