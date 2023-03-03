@@ -2,15 +2,15 @@ package bootstrap
 
 import (
 	"fmt"
+	"github.com/eatmoreapple/openwechat"
 	"github.com/qingconglaixueit/wechatbot/handlers"
 	"github.com/qingconglaixueit/wechatbot/pkg/logger"
-	"github.com/eatmoreapple/openwechat"
 )
 
 func Run() {
 	//bot := openwechat.DefaultBot()
 	bot := openwechat.DefaultBot(openwechat.Desktop) // 桌面模式，上面登录不上的可以尝试切换这种模式
-
+	logger.Info("liunx 下浏览器访问这个地址后用微信扫码:", bot.UUIDCallback)
 	// 注册消息处理函数
 	handler, err := handlers.NewHandler()
 	if err != nil {

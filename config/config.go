@@ -29,6 +29,8 @@ type Configuration struct {
 	ReplyPrefix string `json:"reply_prefix"`
 	// 清空会话口令
 	SessionClearToken string `json:"session_clear_token"`
+	// 请求代理
+	ProxyUrl string `json:"proxy_url"`
 }
 
 var config *Configuration
