@@ -15,6 +15,7 @@ import (
 )
 
 const BASEURL_TURBO = "https://api.openai.com/v1/"
+const MODEL_TEXT_DAVINCI_003 = "text-davinci-003"
 
 // ChatGPTResponseBodyTurbo 响应体
 type ChatGPTResponseBodyTurbo struct {

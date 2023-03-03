@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/eatmoreapple/openwechat"
+	"github.com/qingconglaixueit/wechatbot/config"
 	"github.com/qingconglaixueit/wechatbot/gpt"
 	"github.com/qingconglaixueit/wechatbot/pkg/logger"
 	"github.com/qingconglaixueit/wechatbot/service"
@@ -95,9 +96,13 @@ func (g *GroupMessageHandler) ReplyText() error {
 		logger.Info("user message is null")
 		return nil
 	}
-
+	cfg := config.LoadConfig()
 	// 3.请求GPT获取回复
-	reply, err = gpt.CompletionsTurbo(requestText)
+	if cfg.Model == gpt.MODEL_TEXT_DAVINCI_003 {
+		reply, err = gpt.Completions(requestText)
+	} else {
+		reply, err = gpt.CompletionsTurbo(requestText)
+	}
 	if err != nil {
 		// 2.1 将GPT请求失败信息输出给用户，省得整天来问又不知道日志在哪里。
 		errMsg := fmt.Sprintf("gpt request error: %v", err)

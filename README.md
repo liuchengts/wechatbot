@@ -1,5 +1,11 @@
 # wechatbot
+# 说明：
+### 本项目来源于作者项目 [qingconglaixueit/wechatbot](https://github.com/qingconglaixueit/wechatbot) 本项目在其基础上增加了以下功能:
+* 增加在配置文件中配置访问代理地址，并在请求`OpenAI`时进行代理实现
+* 增加`gpt-3.5-turbo`模型接入实现
 
+# 注意：
+###以下内容大部分为原项目说明，但根据情况，有部分的改动
 > 本项目是 fork 他人的项目来进行学习和使用，请勿商用，可以下载下来做自定义的功能
 > 最近ChatGPT异常火爆，本项目可以将个人微信化身GPT机器人，
 > 项目基于[openwechat](https://github.com/eatmoreapple/openwechat) 开发。
@@ -119,13 +125,13 @@ $ tail -f run.log
 
 ````
 # 获取项目
-$ git clone https://github.com/869413421/wechatbot.git
+$ git clone https://github.com/liuchengts/wechatbot.git
 
 # 进入项目目录
 $ cd wechatbot
 
-# 复制配置文件
-$ copy config.dev.json config.json
+# 编辑配置文件
+$ vi config.json
 
 # 启动项目
 $ go run main.go
@@ -135,14 +141,15 @@ $ go run main.go
 
 ````
 {
-  "api_key": "your api key",
+  "api_key": "你的openAI密钥",
   "auto_pass": true,
   "session_timeout": 60,
   "max_tokens": 1024,
   "model": "text-davinci-003",
   "temperature": 1,
-  "reply_prefix": "来自机器人回复：",
-  "session_clear_token": "清空会话"
+  "reply_prefix": "openAI：",
+  "session_clear_token": "清空会话",
+  "proxy_url": "你的科学上网代理地址"
 }
 
 api_key：openai api_key
@@ -153,14 +160,5 @@ model: GPT选用模型，默认text-davinci-003，具体选项参考官网训练
 temperature: GPT热度，0到1，默认0.9。数字越大创造力越强，但更偏离训练事实，越低越接近训练事实
 reply_prefix: 私聊回复前缀
 session_clear_token: 会话清空口令，默认`下一个问题`
+proxy_url: 你的科学上网代理地址，让程序能访问到openAI的api
 ````
-
-# 使用示例
-### 私聊
-
-<img width="300px" src="https://raw.githubusercontent.com/869413421/study/master/static/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221208153022.jpg"/>
-
-### 群聊@回复
-
-<img width="300px" src="https://raw.githubusercontent.com/869413421/study/master/static/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221208153015.jpg"/>
-

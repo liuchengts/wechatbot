@@ -1,5 +1,5 @@
 {
-  "api_key": "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",
+  "api_key": "替换成你的openAI密钥",
   "auto_pass": true,
   "session_timeout": 60,
   "max_tokens": 1024,
@@ -7,8 +7,12 @@
   "temperature": 1,
   "reply_prefix": "openAI：",
   "session_clear_token": "清空会话",
-  "proxy_url": "socks5://localhost:1086"
+  "proxy_url": "替换成你的科学上网代理地址"
 
 }
+
+#"model": "gpt-3.5-turbo"
+#"model": "text-davinci-003"
+
 #"proxy_url": "socks5://localhost:1086"
 #"proxy_url": "http://localhost:58673"
