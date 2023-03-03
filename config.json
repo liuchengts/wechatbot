@@ -8,4 +8,7 @@
   "reply_prefix": "openAI：",
   "session_clear_token": "清空会话",
   "proxy_url": "socks5://localhost:1086"
+
 }
+#"proxy_url": "socks5://localhost:1086"
+#"proxy_url": "http://localhost:58673"
