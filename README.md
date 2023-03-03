@@ -118,7 +118,7 @@ $ ./wechatbot  # 直接运行
 
 # 如果要守护在后台运行
 $ nohup ./wechatbot &> run.log &
-$ tail -f run.log
+$ tail -f -n 300 run.log
 ```
 
 `第二种：基于源码运行(适合了解go语言编程的同学)`
@@ -135,6 +135,12 @@ $ cp config.dev.json config.json  # 按实际情况更改内容
 
 # 启动项目
 $ go run main.go
+
+# 后台运行
+$ nohup go run main.go &> run.log &
+
+# 查看授权二维码
+$ tail -f -n 300 run.log
 ````
 
 # 配置文件说明
